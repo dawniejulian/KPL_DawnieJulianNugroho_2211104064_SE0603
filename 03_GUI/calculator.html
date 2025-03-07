@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"> <!-- Menentukan karakter encoding sebagai UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tampilan responsif -->
+    <title>Kalkulator Sederhana</title> <!-- Judul halaman -->
+    <style>
+        /* Gaya dasar untuk seluruh halaman */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        /* Header styling */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Styling untuk main content */
+        main {
+            padding: 20px;
+        }
+        section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        aside {
+            background: #ddd;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        /* Styling khusus kalkulator */
+        .calculator-container {
+            max-width: 300px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .calculator-display {
+            width: 100%;
+            height: 40px;
+            font-size: 1.2em;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .calculator-buttons button {
+            height: 50px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .calculator-buttons button:hover {
+            background-color: #d4d4d4;
+        }
+        .equal-button {
+            grid-column: span 4;
+            background-color: #4caf50;
+            color: #fff;
+        }
+        .equal-button:hover {
+            background-color: #45a045;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header: Menggunakan struktur dari index_css_js.html -->
+    <header>
+        <h1>Judul Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="calculator.html">Kalkulator</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main: Bagian utama konten -->
+    <main>
+        <!-- Section Kalkulator -->
+        <section id="calculator">
+            <h2>Kalkulator Sederhana</h2>
+            <div class="calculator-container">
+                <!-- Tampilan kalkulator -->
+                <input type="text" id="calc-display" class="calculator-display" disabled>
+                <!-- Tombol-tombol kalkulator -->
+                <div class="calculator-buttons">
+                    <button onclick="appendValue('7')">7</button>
+                    <button onclick="appendValue('8')">8</button>
+                    <button onclick="appendValue('9')">9</button>
+                    <button onclick="appendValue('/')">/</button>
+                    
+                    <button onclick="appendValue('4')">4</button>
+                    <button onclick="appendValue('5')">5</button>
+                    <button onclick="appendValue('6')">6</button>
+                    <button onclick="appendValue('*')">*</button>
+                    
+                    <button onclick="appendValue('1')">1</button>
+                    <button onclick="appendValue('2')">2</button>
+                    <button onclick="appendValue('3')">3</button>
+                    <button onclick="appendValue('-')">-</button>
+                    
+                    <button onclick="appendValue('0')">0</button>
+                    <button onclick="appendValue('.')">.</button>
+                    <button onclick="clearDisplay()">C</button>
+                    <button onclick="appendValue('+')">+</button>
+                    
+                    <button onclick="calculateResult()" class="equal-button">=</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Aside: Konten tambahan -->
+    <aside>
+        <h2>Artikel Terkait</h2>
+        <ul>
+            <li><a href="#" onclick="showAlert('Tips Belajar HTML')">Tips Belajar HTML</a></li>
+            <li><a href="#" onclick="showAlert('Manfaat Penggunaan CSS')">Manfaat Penggunaan CSS</a></li>
+        </ul>
+    </aside>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Website Contoh. Semua hak dilindungi.</p>
+    </footer>
+    
+    <!-- Script: Fungsi JavaScript -->
+    <script>
+        // Fungsi untuk menampilkan alert ketika link diklik (sama seperti di index_css_js.html)
+        function showAlert(message) {
+            alert("Anda mengklik: " + message);
+        }
+        // Fungsi untuk menambahkan nilai ke tampilan kalkulator
+        function appendValue(value) {
+            document.getElementById('calc-display').value += value;
+        }
+        // Fungsi untuk mengosongkan tampilan kalkulator
+        function clearDisplay() {
+            document.getElementById('calc-display').value = '';
+        }
+        // Fungsi untuk menghitung hasil ekspresi kalkulator
+        function calculateResult() {
+            const display = document.getElementById('calc-display');
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
