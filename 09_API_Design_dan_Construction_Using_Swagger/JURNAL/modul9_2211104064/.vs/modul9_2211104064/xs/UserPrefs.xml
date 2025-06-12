@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{E43ED437-94AB-4F94-A416-B0570F8E2A6B}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="modul9_2211104064/Controllers/MoviesController.cs">
+    <Files>
+      <File FileName="modul9_2211104064/Program.cs" Line="25" Column="1" />
+      <File FileName="modul9_2211104064/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
+      <File FileName="modul9_2211104064/appsettings.json" Line="1" Column="1" />
+      <File FileName="modul9_2211104064/Properties/launchSettings.json" Line="16" Column="30" />
+      <File FileName="modul9_2211104064/Models/Movie.cs" Line="13" Column="2" />
+      <File FileName="modul9_2211104064/Controllers/MoviesController.cs" Line="33" Column="41" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.modul9__2211104064 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
